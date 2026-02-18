@@ -26,6 +26,5 @@ module Rails81DialogComponent
 
     # Don't generate system test files.
     config.generators.system_tests = nil
-    config.hosts << "0.0.0.0"
   end
 end
