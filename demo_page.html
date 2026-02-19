@@ -43,7 +43,7 @@
   <body>
     <main class="container mx-auto mt-28 px-5 flex flex-col">
       <!-- BEGIN app/views/demos/index.html.erb
---><h1 class="text-3xl font-bold text-center mt-12">DialogComponent デモ</h1>
+--><h1 class="text-3xl font-bold text-center mt-12">DialogComponent デモ<br>（静的ページによる簡易版）</h1>
 
 
 <div class="grid grid-cols-2 gap-x-8 gap-y-16 max-w-2xl mt-8 mx-auto bg-gray-100 p-32">
@@ -295,7 +295,7 @@
     <hgroup>
       <h2 id="example-dialog5-title" class="m-0 text-lg font-semibold text-gray-900">    サンプルダイアログ5
 </h2>
-        <p id="example-dialog5-desc" class="m-0 mt-1 text-sm text-gray-600">    フォーム送信ダイアログ
+        <p id="example-dialog5-desc" class="m-0 mt-1 text-sm text-gray-600">    フォーム送信ダイアログ（注: 確認ボタンは無効です）
 </p>
     </hgroup>
       <button type="button" 
@@ -340,7 +340,7 @@
     <hgroup>
       <h2 id="example-dialog6-title" class="m-0 text-lg font-semibold text-gray-900">    サンプルダイアログ6
 </h2>
-        <p id="example-dialog6-desc" class="m-0 mt-1 text-sm text-gray-600">    設定ダイアログ
+        <p id="example-dialog6-desc" class="m-0 mt-1 text-sm text-gray-600">    設定ダイアログ（注: 確認ボタンは無効です）
 </p>
     </hgroup>
       <button type="button" 
@@ -538,7 +538,7 @@
     <hgroup>
       <h2 id="example-dialog5css-title" class="dialog-component__title">    サンプルダイアログ5
 </h2>
-        <p id="example-dialog5css-desc" class="dialog-component__description">    フォーム送信ダイアログ
+        <p id="example-dialog5css-desc" class="dialog-component__description">    フォーム送信ダイアログ（注: 確認ボタンは無効です）
 </p>
     </hgroup>
       <button type="button" 
@@ -573,27 +573,27 @@
     </footer>
 </form></dialog>
 <!-- END app/components/dialog_css_component.html.erb -->
-<!-- BEGIN app/components/dialog_component.html.erb
---><dialog id="example-dialog6" 
-        class="rounded-lg border-none bg-white p-0 shadow-xl max-w-md w-full m-auto backdrop:bg-black/60 "
-        aria-labelledby="example-dialog6-title" 
-        aria-describedby="example-dialog6-desc" 
+<!-- BEGIN app/components/dialog_css_component.html.erb
+--><dialog id="example-dialog6css" 
+        class="dialog-component "
+        aria-labelledby="example-dialog6css-title" 
+        aria-describedby="example-dialog6css-desc" 
         closedby="any">
-  <header class="relative p-4 border-b border-gray-200">
+  <header class="dialog-component__header">
     <hgroup>
-      <h2 id="example-dialog6-title" class="m-0 text-lg font-semibold text-gray-900">    サンプルダイアログ6
+      <h2 id="example-dialog6css-title" class="dialog-component__title">    サンプルダイアログ6
 </h2>
-        <p id="example-dialog6-desc" class="m-0 mt-1 text-sm text-gray-600">    設定ダイアログ
+        <p id="example-dialog6css-desc" class="dialog-component__description">    設定ダイアログ（注: 確認ボタンは無効です）
 </p>
     </hgroup>
       <button type="button" 
-              commandfor="example-dialog6" 
+              commandfor="example-dialog6css" 
               command="close" 
-              class="absolute right-4 top-4 text-gray-500 hover:text-gray-700 text-2xl leading-none"
+              class="dialog-component__close-button"
               aria-label="ダイアログを閉じる">&times;</button>
   </header>
   <form data-turbo="false" action="/demos/create/" accept-charset="UTF-8" method="post">
-    <article class="p-4 text-sm text-gray-700">
+    <article class="dialog-component__body">
           <div class="space-y-3">
       <label class="flex items-center gap-2">
         <input type="checkbox" class="rounded" checked />
@@ -610,18 +610,18 @@
     </div>
 
     </article>
-    <footer class="flex items-center justify-end gap-2 p-4 border-t border-gray-200">
-        <button class="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50" 
+    <footer class="dialog-component__footer">
+        <button class="dialog-component__button dialog-component__button--secondary" 
                 type="submit" 
                 formmethod="dialog" 
                 formnovalidate 
                 value="cancel">キャンセル</button>
-        <button class="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700" 
+        <button class="dialog-component__button dialog-component__button--primary" 
                 type="submit" 
                 autofocus>確認</button>
     </footer>
 </form></dialog>
-<!-- END app/components/dialog_component.html.erb --><!-- END app/views/demos/index.html.erb -->
+<!-- END app/components/dialog_css_component.html.erb --><!-- END app/views/demos/index.html.erb -->
     </main>
   </body>
 </html>
